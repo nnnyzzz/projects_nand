@@ -58,55 +58,88 @@ M=-1
     "gt":
         """//gt
 @SP
-AM=M-1
-D=M
-
-A=A-1
-D=M-D
-@TRUE_number_x
-D;JGT
-
-//else enter false
+AM = M-1
+D = M
+@Yltz.number_x
+D;JLT            
+@SP       
+A = M-1
+D = M
+@false.number_x 
+D;JLT          
+(sub.number_x)  
 @SP
-A=M-1
-M=0
-@CONTINUE_number_x
+A = M
+D = D-M
+@true.number_x
+D;JGT
+@false.number_x
+0;JMP
+(Yltz.number_x)
+@SP
+A = M-1
+D = M
+@true.number_x
+D;JGE
+@sub.number_x
 0;JMP
 
-(TRUE_number_x)
-//enter true
+(true.number_x)
 @SP
-A=M-1
-M=-1
+A = M-1
+M = -1
+@end.number_x
+0;JMP
 
-(CONTINUE_number_x)
+(false.number_x)
+@SP
+A = M-1
+M = 0
+
+(end.number_x)
 """,
 
     "lt": """//lt
 @SP
-AM=M-1
-D=M
-
-A=A-1
-D=M-D
-@TRUE_number_x
-D;JLT
-
-//else enter false
+AM = M-1
+D = M
+@Yltz.number_x
+D;JLT            
+@SP       
+A = M-1
+D = M
+@true.number_x 
+D;JLT          
+(sub.number_x)  
 @SP
-A=M-1
-M=0
-@CONTINUE_number_x
+A = M
+D = D-M
+@false.number_x
+D;JGE
+@true.number_x
+0;JMP
+(Yltz.number_x)
+@SP
+A = M-1
+D = M
+@false.number_x
+D;JGE
+@sub.number_x
 0;JMP
 
-(TRUE_number_x)
-//enter true
+(true.number_x)
 @SP
-A=M-1
-M=-1
+A = M-1
+M = -1
+@end.number_x
+0;JMP
 
-(CONTINUE_number_x)
-""",
+(false.number_x)
+@SP
+A = M-1
+M = 0
+
+(end.number_x)""",
 
     "and": """//and
 @SP

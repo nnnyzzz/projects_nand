@@ -30,6 +30,7 @@ class CodeWriter:
         self.cur_instruction = None
         self.output_stream = output_stream
         self.cur_file_name = None
+        self.cur_file_name = output_stream.name.split("\\")[-1].split(".")[0]
         self.counter_label = 0
         self.return_address_counter = {}
 
@@ -123,150 +124,146 @@ class CodeWriter:
     ############################ P R O J E C T    8   #####################
     #######################################################################
     def write_label(self, label: str) -> None:
-        return
-        """Writes assembly code that affects the label command. 
-        Let "Xxx.foo" be a function within the file Xxx.vm. The handling of
-        each "label bar" command within "Xxx.foo" generates and injects the symbol
-        "Xxx.foo$bar" into the assembly code stream.
-        When translating "goto bar" and "if-goto bar" commands within "foo",
-        the label "Xxx.foo$bar" must be used instead of "bar".
-
-        Args:
-            label (str): the label to write.
-        """
-        print(label)
-        self.output_stream.write(asm_dict.branching_dict["label"].replace("label", label))
+        pass
+        # """Writes assembly code that affects the label command.
+        # Let "Xxx.foo" be a function within the file Xxx.vm. The handling of
+        # each "label bar" command within "Xxx.foo" generates and injects the symbol
+        # "Xxx.foo$bar" into the assembly code stream.
+        # When translating "goto bar" and "if-goto bar" commands within "foo",
+        # the label "Xxx.foo$bar" must be used instead of "bar".
+        #
+        # Args:
+        #     label (str): the label to write.
+        # """
+        # print(label)
+        # self.output_stream.write(asm_dict.branching_dict["label"].replace("label", label))
 
     def write_goto(self, label: str) -> None:
-        return
-        """Writes assembly code that affects the goto command.
-
-        Args:
-            label (str): the label to go to.
-        """
-        self.output_stream.write(asm_dict.branching_dict["goto"].
-                                 replace("label", label).replace("file_name", self.cur_file_name))
+        pass
+        # """Writes assembly code that affects the goto command.
+        #
+        # Args:
+        #     label (str): the label to go to.
+        # """
+        # self.output_stream.write(asm_dict.branching_dict["goto"].
+        #                          replace("label", label).replace("file_name", self.cur_file_name))
 
     def write_if(self, label: str) -> None:
-        return
-        """Writes assembly code that affects the if-goto command. 
-
-        Args:
-            label (str): the label to go to.
-        """
-        self.output_stream.write(asm_dict.branching_dict["if"].
-                                 replace("label", label).replace("file_name", self.cur_file_name))
+        pass
+        # """Writes assembly code that affects the if-goto command.
+        #
+        # Args:
+        #     label (str): the label to go to.
+        # """
+        # self.output_stream.write(asm_dict.branching_dict["if"].
+        #                          replace("label", label).replace("file_name", self.cur_file_name))
 
     def write_function(self, function_name: str, n_vars: int) -> None:
-        return
-        """Writes assembly code that affects the function command. 
-        The handling of each "function Xxx.foo" command within the file Xxx.vm
-        generates and injects a symbol "Xxx.foo" into the assembly code stream,
-        that labels the entry-point to the function's code.
-        In the subsequent assembly process, the assembler translates this 
-        symbol into the physical address where the function code starts.
-
-        Args:
-            function_name (str): the name of the function.
-            n_vars (int): the number of local variables of the function.
-        """
-        # This is irrelevant for project 7,
-        # you will implement this in project 8!
-        # The pseudo-code of "function function_name n_vars" is:
-        # (function_name)       // injects a function entry label into the code
-        # repeat n_vars times:  // n_vars = number of local variables
-        #   push constant 0     // initializes the local variables to 0
-        # todo check if () is needed
-        self.output_stream.write("(" + function_name + ")\n")
-        for i in range(n_vars):
-            self.output_stream.write(asm_dict.memory_access_dict["const_i"].replace("i", "0"))
-            self.output_stream.write(asm_dict.memory_access_dict["push"])
+        pass
+        # """Writes assembly code that affects the function command.
+        # The handling of each "function Xxx.foo" command within the file Xxx.vm
+        # generates and injects a symbol "Xxx.foo" into the assembly code stream,
+        # that labels the entry-point to the function's code.
+        # In the subsequent assembly process, the assembler translates this
+        # symbol into the physical address where the function code starts.
+        #
+        # Args:
+        #     function_name (str): the name of the function.
+        #     n_vars (int): the number of local variables of the function.
+        # """
+        # # This is irrelevant for project 7,
+        # # you will implement this in project 8!
+        # # The pseudo-code of "function function_name n_vars" is:
+        # # (function_name)       // injects a function entry label into the code
+        # # repeat n_vars times:  // n_vars = number of local variables
+        # #   push constant 0     // initializes the local variables to 0
+        # self.output_stream.write("(" + function_name + ")\n")
+        # for i in range(n_vars):
+        #     self.output_stream.write(asm_dict.memory_access_dict["const_i"].replace("i", "0"))
+        #     self.output_stream.write(asm_dict.memory_access_dict["push"])
 
     def write_call(self, function_name: str, n_args: int) -> None:
-        return
-        """Writes assembly code that affects the call command. 
-        Let "Xxx.foo" be a function within the file Xxx.vm.
-        The handling of each "call" command within Xxx.foo's code generates and
-        injects a symbol "Xxx.foo$ret.i" into the assembly code stream, where
-        "i" is a running integer (one such symbol is generated for each "call"
-        command within "Xxx.foo").
-        This symbol is used to mark the return address within the caller's 
-        code. In the subsequent assembly process, the assembler translates this
-        symbol into the physical memory address of the command immediately
-        following the "call" command.
-
-        Args:
-            function_name (str): the name of the function to call.
-            n_args (int): the number of arguments of the function.
-        """
-        # This is irrelevant for project 7,
-        # you will implement this in project 8!
-        # The pseudo-code of "call function_name n_args" is:
-        # push return_address   // generates a label and pushes it to the stack
-        return_address = self.cur_file_name + "." + function_name + "$ret." + str(
-            self.return_addres_counter(function_name))
-        self.output_stream.write(asm_dict.memory_access_dict["load_new_label"](return_address))
-        self.output_stream.write(asm_dict.memory_access_dict["push"])
-
-        # push LCL              // saves LCL of the caller
-        self.output_stream.write(asm_dict.memory_access_dict["load_segment"].replace("segment", "LCL"))
-        self.output_stream.write(asm_dict.memory_access_dict["push"])
-        # push ARG              // saves ARG of the caller
-        self.output_stream.write(asm_dict.memory_access_dict["load_segment"].replace("segment", "ARG"))
-        self.output_stream.write(asm_dict.memory_access_dict["push"])
-        # push THIS             // saves THIS of the caller
-        self.output_stream.write(asm_dict.memory_access_dict["load_segment"].replace("segment", "THIS"))
-        self.output_stream.write(asm_dict.memory_access_dict["push"])
-        # push THAT             // saves THAT of the caller
-        self.output_stream.write(asm_dict.memory_access_dict["load_segment"].replace("segment", "THAT"))
-        self.output_stream.write(asm_dict.memory_access_dict["push"])
-        # ARG = SP-5-n_args     // repositions ARG
-        self.output_stream.write(
-            asm_dict.reposition_dict["reposition_source_dest_with_inc"]("SP", str(int(-5 - n_args)), "ARG"))
-
-        # LCL = SP              // repositions LCL
-        self.output_stream.write(asm_dict.reposition_dict["reposition_source_dest_with_inc"]("SP", "0", "LCL"))
-
-        # goto function_name    // transfers control to the callee
-        self.write_goto(function_name)
-        # (return_address)      // injects the return address label into the code
-        self.write_label(return_address)
+        pass
+        # """Writes assembly code that affects the call command.
+        # Let "Xxx.foo" be a function within the file Xxx.vm.
+        # The handling of each "call" command within Xxx.foo's code generates and
+        # injects a symbol "Xxx.foo$ret.i" into the assembly code stream, where
+        # "i" is a running integer (one such symbol is generated for each "call"
+        # command within "Xxx.foo").
+        # This symbol is used to mark the return address within the caller's
+        # code. In the subsequent assembly process, the assembler translates this
+        # symbol into the physical memory address of the command immediately
+        # following the "call" command.
+        #
+        # Args:
+        #     function_name (str): the name of the function to call.
+        #     n_args (int): the number of arguments of the function.
+        # """
+        # # This is irrelevant for project 7,
+        # # you will implement this in project 8!
+        # # The pseudo-code of "call function_name n_args" is:
+        # # push return_address   // generates a label and pushes it to the stack
+        # return_address = self.cur_file_name + "." + function_name + "$ret." + str(
+        #     self.return_addres_counter(function_name))
+        # self.output_stream.write(asm_dict.memory_access_dict["load_new_label"](return_address))
+        # self.output_stream.write(asm_dict.memory_access_dict["push"])
+        #
+        # # push LCL              // saves LCL of the caller
+        # self.output_stream.write(asm_dict.memory_access_dict["load_segment"].replace("segment", "LCL"))
+        # self.output_stream.write(asm_dict.memory_access_dict["push"])
+        # # push ARG              // saves ARG of the caller
+        # self.output_stream.write(asm_dict.memory_access_dict["load_segment"].replace("segment", "ARG"))
+        # self.output_stream.write(asm_dict.memory_access_dict["push"])
+        # # push THIS             // saves THIS of the caller
+        # self.output_stream.write(asm_dict.memory_access_dict["load_segment"].replace("segment", "THIS"))
+        # self.output_stream.write(asm_dict.memory_access_dict["push"])
+        # # push THAT             // saves THAT of the caller
+        # self.output_stream.write(asm_dict.memory_access_dict["load_segment"].replace("segment", "THAT"))
+        # self.output_stream.write(asm_dict.memory_access_dict["push"])
+        # # ARG = SP-5-n_args     // repositions ARG
+        # self.output_stream.write(
+        #     asm_dict.reposition_dict["reposition_source_dest_with_inc"]("SP", str(int(-5 - n_args)), "ARG"))
+        #
+        # # LCL = SP              // repositions LCL
+        # self.output_stream.write(asm_dict.reposition_dict["reposition_source_dest_with_inc"]("SP", "0", "LCL"))
+        #
+        # # goto function_name    // transfers control to the callee
+        # self.write_goto(function_name)
+        # # (return_address)      // injects the return address label into the code
+        # self.write_label(return_address)
 
     def return_addres_counter(self, function_name: str) -> int:
-        return
-        if function_name not in self.return_address_counter:
-            self.return_address_counter[function_name] = 0
-            return 0
-        self.return_address_counter[function_name] += 1
-        return self.return_address_counter[function_name]
+        pass
+        # if function_name not in self.return_address_counter:
+        #     self.return_address_counter[function_name] = 0
+        #     return 0
+        # self.return_address_counter[function_name] += 1
+        # return self.return_address_counter[function_name]
 
     def write_return(self) -> None:
         """Writes assembly code that affects the return command."""
         # This is irrelevant for project 7,
         # you will implement this in project 8!
         # The pseudo-code of "return" is:
-        return
+        pass
         # frame = LCL                   // frame is a temporary variable
-        self.output_stream.write(asm_dict.reposition_dict["reposition_source_dest_with_inc"]("LCL", "0", "frame"))
-        # return_address = *(frame-5)   // puts the return address in a temp var
-        self.output_stream.write(asm_dict.reposition_dict["reposition_address"]("frame", "5", "return_address"))
-        # *ARG = pop()                  // repositions the return value for the caller
-        self.output_stream.write(asm_dict.memory_access_dict["pop_arg"])
-        # SP = ARG + 1                  // repositions SP for the caller
-        self.output_stream.write(asm_dict.reposition_dict["reposition_source_dest_with_inc"]("ARG", "1", "SP"))
-        # THAT = *(frame-1)             // restores THAT for the caller
-        self.output_stream.write(asm_dict.reposition_dict["reposition_address"]("frame", "1", "THAT"))
-        # THIS = *(frame-2)             // restores THIS for the caller
-        self.output_stream.write(asm_dict.reposition_dict["reposition_address"]("frame", "2", "THIS"))
-        # ARG = *(frame-3)              // restores ARG for the caller
-        self.output_stream.write(asm_dict.reposition_dict["reposition_address"]("frame", "3", "ARG"))
-        # LCL = *(frame-4)              // restores LCL for the caller
-        self.output_stream.write(asm_dict.reposition_dict["reposition_address"]("frame", "4", "LCL"))
-        # goto return_address           // go to the return address
-        self.output_stream.write(asm_dict.reposition_dict["return_address"])
+        # self.output_stream.write(asm_dict.reposition_dict["reposition_source_dest_with_inc"]("LCL", "0", "frame"))
+        # # return_address = *(frame-5)   // puts the return address in a temp var
+        # self.output_stream.write(asm_dict.reposition_dict["reposition_address"]("frame", "5", "return_address"))
+        # # *ARG = pop()                  // repositions the return value for the caller
+        # self.output_stream.write(asm_dict.memory_access_dict["pop_arg"])
+        # # SP = ARG + 1                  // repositions SP for the caller
+        # self.output_stream.write(asm_dict.reposition_dict["reposition_source_dest_with_inc"]("ARG", "1", "SP"))
+        # # THAT = *(frame-1)             // restores THAT for the caller
+        # self.output_stream.write(asm_dict.reposition_dict["reposition_address"]("frame", "1", "THAT"))
+        # # THIS = *(frame-2)             // restores THIS for the caller
+        # self.output_stream.write(asm_dict.reposition_dict["reposition_address"]("frame", "2", "THIS"))
+        # # ARG = *(frame-3)              // restores ARG for the caller
+        # self.output_stream.write(asm_dict.reposition_dict["reposition_address"]("frame", "3", "ARG"))
+        # # LCL = *(frame-4)              // restores LCL for the caller
+        # self.output_stream.write(asm_dict.reposition_dict["reposition_address"]("frame", "4", "LCL"))
+        # # goto return_address           // go to the return address
+        # self.output_stream.write(asm_dict.reposition_dict["return_address"])
 
     def write_init(self):
-        return
-        """Writes assembly code that effects the VM initialization"""
-        self.output_stream.write(asm_dict.reposition_dict["init_SP"])
-        self.write_call("sys.init", 0, 0)
+        pass

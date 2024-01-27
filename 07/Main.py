@@ -24,10 +24,8 @@ def translate_file(input_file, output_file: typing.TextIO) -> None:
 
     parser = Parser(input_file)
     code_writer = CodeWriter(output_file)
-    input_filename, input_extension = os.path.splitext(os.path.basename(input_file.name))
-    code_writer.set_file_name(input_filename)
-    if input_filename == "main":
-        code_writer.write_init()
+
+
     while parser.has_more_commands():
         # print(parser.cur_instruction)
         parser.set_command_type()
