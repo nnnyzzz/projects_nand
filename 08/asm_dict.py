@@ -1,3 +1,5 @@
+
+
 arithmetic_dict = {
 
     "add": """//add
@@ -20,7 +22,8 @@ M=M-D
     "neg": """//neg
 @SP
 A=M-1
-M=-M""",
+M=-M
+""",
 
     "not": """//not
 @SP
@@ -139,7 +142,8 @@ M = -1
 A = M-1
 M = 0
 
-(end.number_x)""",
+(end.number_x)
+""",
 
     "and": """//and
 @SP
@@ -159,7 +163,20 @@ D = M
 @SP
 A = M-1
 M = D|M
+""",
+
+    ">>": """//>> shift right
+@SP
+A = M-1
+M = M>>
 """
+    ,
+    "<<": """//<< shift left
+@SP
+A = M-1
+M = M<<
+"""
+
 }
 
 memory_access_dict = {
@@ -168,7 +185,6 @@ memory_access_dict = {
 @SP
 A=M
 M=D
-
 //inc SP
 @SP
 M=M+1
@@ -190,7 +206,7 @@ D=A
     "load_static": """//load static file_name.i to D
 @file_name.i
 D=M
-    """
+"""
     ,
     "push_temp": """//load temp_index to D
 @R_index
@@ -208,13 +224,11 @@ D=M
 """
     ,
 
-    "load_new_label": lambda label: """ //load """ + label
+    "load_new_label": lambda label: """//load func """ + label
                                     + """
 @""" + label + """
 D=A
-
-
-    """
+"""
 
     ### POP ###
     ,
@@ -225,14 +239,14 @@ D=A
 @segment
 D=D+M
 
-@temp
+@R13
 M=D
 
 @SP
 AM=M-1
 D=M
 
-@temp
+@R13
 A=M
 M=D
 """
@@ -278,13 +292,13 @@ M = M-1
 }
 
 branching_dict = {
-    "label": """//label
-(label)
+    "label": """//label only!
+(file_name.label)
 """
 
     ,
     "goto": """//goto
-@file_name$label
+@file_name.label
 0;JMP
 """
     ,
@@ -292,19 +306,19 @@ branching_dict = {
 @SP
 AM=M-1
 D=M
-@label
+@file_name.label
 D;JNE
 """
 }
-
 reposition_dict = {
     "reposition_source_dest_with_inc": lambda source, inc, dest: """//regular reposition 
 @""" + source + """
 D=M
 @""" + inc + """
-D = D + A
+D = D - A
 @""" + dest + """
-M=D"""
+M=D
+"""
     ,
     "reposition_address": lambda source, decrease, dest: """//reposition address
 @""" + source + """
@@ -326,12 +340,10 @@ M=D
     ,
 
     "return_address": """//return address
-@return_address
+@R15
 A=M
 0;JMP
 """
-
 }
 
-if __name__ == '__main__':
-    pass
+

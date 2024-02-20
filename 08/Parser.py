@@ -111,7 +111,7 @@ class Parser:
             self.cur_command_type = "C_IF"
         else:
             if self.cur_instruction.split()[0] == "function":
-                self.curr_function = self.arg1()
+                self.curr_function = self.cur_instruction.split()[1]
             self.cur_command_type = "C_" + self.cur_instruction.split()[0].upper()
 
 
@@ -126,6 +126,7 @@ class Parser:
         assert self.cur_command_type != "C_RETURN", "Should not be called if the current command is C_RETURN"
         if self.cur_command_type == "C_FUNCTION":
             self.curr_function = self.cur_instruction.split()[1]
+            return self.cur_instruction.split()[1]
         if self.cur_command_type == "C_ARITHMETIC":
             return self.cur_instruction.split()[0]
         return self.cur_instruction.split()[1]
@@ -147,23 +148,6 @@ class Parser:
         return self.cur_instruction.split()[1]
 
     def get_function(self):
+        """Returns the current function name"""
         return self.curr_function
 
-if __name__ == '__main__':
-    pass
-    # parser1 = Parser("StackTest.vm")
-    # with open("output.asm", 'w') as output_file:
-    #     code1 = CodeWriter(output_file)
-    #     code1.set_file_name("StackTest.vm")
-    #     while parser1.has_more_commands():
-    #         parser1.set_command_type()
-    #         print(parser1.cur_instruction)
-    #         print(parser1.cur_command_type)
-    #         print(parser1.arg1())
-    #         print(parser1.arg2())
-    #
-    #         if parser1.cur_command_type == "C_ARITHMETIC":
-    #             code1.write_arithmetic(parser1.arg1())
-    #         else:
-    #             code1.write_push_pop(parser1.cur_command_type, parser1.get_segment(), parser1.arg2())
-    #         parser1.advance()

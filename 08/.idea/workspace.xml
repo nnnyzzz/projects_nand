@@ -5,12 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7eaa5750-5218-40bc-b24a-233f181dcc4f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../07/project07.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../07/project07.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../07/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FunctionCalls/FibonacciElement/VVV" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FunctionCalls/SimpleFunction/SFVVV" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FunctionCalls/StaticsTest/StaticsTestVVV.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../07/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../07/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../07/CodeWriter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../07/CodeWriter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../07/FunctionCalls/FibonacciElement/FibonacciElement.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../07/FunctionCalls/FibonacciElement/FibonacciElement.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../07/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../07/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../07/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/../07/Parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../07/project07.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/AUTHORS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeWriter.py" beforeDir="false" afterPath="$PROJECT_DIR$/CodeWriter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FunctionCalls/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/FunctionCalls/FibonacciElement/FIBVVV" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FunctionCalls/.idea/FunctionCalls.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FunctionCalls/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FunctionCalls/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FunctionCalls/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FunctionCalls/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FunctionCalls/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FunctionCalls/FibonacciElement/FibonacciElement.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FunctionCalls/FibonacciElement/FibonacciElement.out" beforeDir="false" afterPath="$PROJECT_DIR$/FunctionCalls/FibonacciElement/FibonacciElement.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramFlow/BasicLoop/BasicLoop.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramFlow/FibonacciSeries/FibonacciSeries.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asm_dict.py" beforeDir="false" afterPath="$PROJECT_DIR$/asm_dict.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -18,6 +52,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2VTeqAiDhbsuWxAgVfnaR4TYnXZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,15 +62,24 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.FibonacciElement.executor": "Run",
+    "Python.NastedCall.executor": "Run",
+    "Python.ProgramFlow/BasicLoop.executor": "Run",
+    "Python.Simple_func.executor": "Run",
+    "Python.StaticTest.executor": "Run",
+    "Python.Test/p8/Pong.executor": "Run",
+    "Python.playground.executor": "Run",
+    "Python.simple_func.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
-    "last_opened_file_path": "C:/Users/neriy/Desktop/nand_nine_ten/11"
+    "last_opened_file_path": "C:/Users/neriy/Desktop/ML/ex3"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.NastedCall">
+    <configuration name="NastedCall" type="PythonConfigurationType" factoryName="Python">
       <module name="08" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -45,7 +91,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="FunctionCalls/FibonacciElement" />
+      <option name="PARAMETERS" value="Test/p8/test" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -53,11 +99,137 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ProgramFlow/BasicLoop" type="PythonConfigurationType" factoryName="Python">
+      <module name="08" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="ProgramFlow/FibonacciSeries" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="StaticTest" type="PythonConfigurationType" factoryName="Python">
+      <module name="08" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="FunctionCalls/StaticsTest" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test/p8/Pong" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="08" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="Test/p8/Reversi" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="playground" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="08" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/playground.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="simple_func" type="PythonConfigurationType" factoryName="Python">
+      <module name="08" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="FunctionCalls/SimpleFunction" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.NastedCall" />
+      <item itemvalue="Python.ProgramFlow/BasicLoop" />
+      <item itemvalue="Python.StaticTest" />
+      <item itemvalue="Python.Test/p8/Pong" />
+      <item itemvalue="Python.playground" />
+      <item itemvalue="Python.simple_func" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Main" />
+        <item itemvalue="Python.playground" />
+        <item itemvalue="Python.Test/p8/Pong" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -69,5 +241,8 @@
       <updated>1694864685892</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.asm" />
   </component>
 </project>

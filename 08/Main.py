@@ -21,16 +21,13 @@ def translate_file(input_file, output_file: typing.TextIO, is_init_file) -> None
     """
     # Your code goes here!
     # It might be good to start with something like:
-    print(f'proses {input_file.name}')
     parser = Parser(input_file)
     code_writer = CodeWriter(output_file)
     input_filename, input_extension = os.path.splitext(os.path.basename(input_file.name))
     code_writer.set_file_name(input_filename)
     if is_init_file:
-        print(f'proses main {input_filename}')
-        # code_writer.write_init()
+        code_writer.write_init()
     while parser.has_more_commands():
-        print(parser.vm[parser.cur_line_index])
         parser.set_command_type()
         if parser.cur_command_type == "C_ARITHMETIC":
             code_writer.write_arithmetic(parser.arg1())
